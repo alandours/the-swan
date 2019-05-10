@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="js/script.js"></script>
+    <title>DHARMA Initiative - Station 3: The Swan</title>
+</head>
+<body>
+    <div class="swan-station">
+        <div class="computer">
+            <div class="monitor">
+                <div class="front-container">
+                    <div class="screen-container">
+                        <div class="screen">
+                            <div class="screen-display">
+                                <span class="cursor">
+                                    <span class="greater">
+                                        >
+                                    </span>
+                                    <span class="colon">
+                                        :
+                                    </span>
+                                </span>
+                                <span id="screen-text">
+                                </span>
+                                <span id="cursor">
+                                </span>
+                                <div class="overlay"></div>
+                                <div id="system-failure-text"></div>
+                            </div>
+                        </div>
+                        <audio src="audio/beep.mp3" id="beepAudio" class="hidden"></audio>
+                        <audio src="audio/reset.mp3" id="resetAudio" class="hidden"></audio>
+                        <audio src="audio/alarm.mp3" id="alarmAudio" class="hidden"></audio>
+                        <audio src="audio/key.mp3" id="keyAudio" class="hidden"></audio>
+                        <audio src="audio/system-failure.mp3" id="systemFailureAudio" class="hidden"></audio>
+                    </div>
+                    <div class="panel">
+                        <div class="sticker">
+                            <img src="img/swan-logo.png" alt="Dharma logo - The Swan" class="logo">
+                            <ul class="lines">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="settings">
+                            <div class="control contrast">
+                            </div>
+                            <div class="control power">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <input type="text" id="textInput">
+            <div class="timer">
+                <div id="minutes">
+                    <span class="timer-number">1</span>
+                    <span class="timer-number">0</span>
+                    <span class="timer-number">8</span>
+                    <span class="line"></span>
+                </div>
+                <div id="seconds">
+                    <span class="timer-number">0</span>
+                    <span class="timer-number">0</span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
