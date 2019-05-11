@@ -40,7 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
 						}, 100);
 		
 						textInput.disabled = true;
-						systemFailureText.innerHTML = 'System FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem FailureSystem Failure';
+
+						let failureText = '';
+
+						for(let i = 0; i < 300; i++){
+							failureText += 'System Failure ';
+						}
+					
+						systemFailureText.innerHTML = failureText;
 
 						clearInterval(countdown);
 						clearInterval(secondsCountdown);
@@ -74,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const textInput = document.getElementById('textInput');
     const body = document.getElementsByTagName('body')[0];
-    const cursor = document.getElementById('cursor');
+    const cursor = document.getElementById('blink');
 
 	textInput.value = '';
 	textInput.disabled = true;

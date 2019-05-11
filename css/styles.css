@@ -100,7 +100,7 @@
                 width: 100%;
                 height: 100%;
                 font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-                font-size: 1.5rem;
+                font-size: 1.5vw;
                 font-weight: 100;
                 color: #1DC438;
                 overflow: hidden;
@@ -111,20 +111,20 @@
                 .cursor{
                     font-family: 'Anonymous Pro';
                     font-weight: 300;
-                    font-size: 150%;
+                    font-size: 2.2vw;
                 }
                 
                 .greater{
-                    margin-right: -25px;
+                    margin-right: -4.5%;
                 }
                 
                 .colon{
-                    margin-right: -15px;
+                    margin-right: -2%;
                 }
 
-                #cursor{
-                    width: 0.75rem;
-                    height: 1.5rem;
+                #blink{
+                    width: 2.5%;
+                    height: 4%;
                     display: inline-block;
                     vertical-align: -2px;
                     background: #1DC438;
@@ -138,6 +138,14 @@
 
                 .hidden{
                     opacity: 0 !important;
+                }
+
+                #system-failure-text{
+                    font-size: 1.3vw;
+                }
+
+                .no-space{
+                    margin-left: 5px;
                 }
 
             .overlay{
@@ -229,6 +237,54 @@
                 background: linear-gradient(180deg, rgba(27,26,19,1) 0%, rgba(27,26,19,1) 90%, rgba(33,31,23,1) 95%);           
             }
 
+            .control p{
+                font-family: 'Baloo Bhai';
+                font-weight: 100;
+                font-size: 1vw;
+                color: #1b1a13;
+                text-shadow: 1px 1px 3px #000;
+            }
+
+            .button{
+                width: 30%;
+                height: 18%;
+                border-radius: 100%;
+                background: rgb(12,12,12);
+                background: radial-gradient(circle, rgba(12,12,12,1) 0%, rgba(12,12,12,1) 38%, rgba(5,5,5,1) 48%, rgba(5,5,5,1) 58%, rgba(5,5,5,1) 100%);
+                margin-top: 18%;
+            }
+
+            .contrast p{
+                margin-top: -20%;
+            }
+
+            .switch{
+                width: 20%;
+                height: 38%;
+                border: 4px solid #050505;
+                position: relative;
+                background: #050505;
+                background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(5,5,5,1) 36%, rgba(22,22,22,1) 58%, rgba(22,22,22,1) 82%, rgba(5,5,5,1) 84%);
+            }
+
+            .mark{
+                position: absolute;
+                background: #eee;
+                width: 15%;
+                height: 8%;
+                left: 50%;
+                margin-left: -5%;
+                top: 5%;
+            }
+
+            .light{
+                background: #c40714;
+                width: 10%;
+                height: 4%;
+                box-shadow: 0 0 5px 2px #c40714;
+                margin-bottom: 10%;
+            }
+
 .sidebar{
     width: 30%;
     background: #151515;
@@ -253,7 +309,7 @@
     margin: 10%;
     background: #393322;
     font-family: 'Open Sans', 'Helvetica', sans-serif;
-    font-size: 5rem;
+    font-size: 4vw;
 }
 
     #minutes{
