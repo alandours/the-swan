@@ -1,2 +1,3 @@
 css/* linguist-vendored
+index.html linguist-vendored
 *.php linguist-language=php
