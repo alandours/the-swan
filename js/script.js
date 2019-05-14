@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	const changeStyles = (oldStyle, newStyle) => {
+
+		const linkElements = document.getElementsByTagName('link');
+		const links = [...linkElements].map(link => link.href.split('/').pop());
+
+		const stylesheet = linkElements[links.indexOf(oldStyle)];
+
+		stylesheet.href = 'css/' + newStyle;
+
+	}
+
 	const displayCountdown = (timer, value) => {
 
 		for(let i = 0; i < timer.length; i++){
@@ -8,10 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 
+	const addHieroglyphs = () => {
+
+		for(let second of timerSeconds){
+			second.classList.add('timer-red');
+			second.style.color = '#ac141c';
+		}
+	
+		for(let minute of timerMinutes){
+			minute.style.color = '#151515';
+		}
+	
+		for(let i = 0; i < timerNumber.length; i++){
+			timerNumber[i].innerHTML += `<img src="img/timer/h${i + 1}.png">`;
+		}
+
+	}
+
 	const startCountdown = () => {
 
 		let seconds = 60;
-		const beepTime = 4;
+		// const beepTime = 4;
+		// const alarmTime = 1;
+		// const systemFailureTime = 0;
+
+		const beepTime = 2;
 		const alarmTime = 1;
 		const systemFailureTime = 0;
 
@@ -52,10 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
 						clearInterval(countdown);
 						clearInterval(secondsCountdown);
 
+						addHieroglyphs();
+
 					}
 
 				}, 1000);
 			}
+
+			/* Play beep or alarm */
 
 			if(minutes == beepTime){
 
@@ -113,10 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const screenText = document.getElementById('screen-text');
 	const systemFailureText = document.getElementById('system-failure-text');
+	const timerNumber = document.querySelectorAll('.timer-number');
 	const timerMinutes = document.querySelectorAll('#minutes .timer-number');
 	const timerSeconds = document.querySelectorAll('#seconds .timer-number');
 
-	let minutes = 108;
+	let minutes = 2;
 	displayCountdown(timerMinutes, minutes.toString().padStart(3, '0'));
 
 	let countdown, playBeep, playAlarm;
@@ -166,6 +203,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			screenText.innerHTML = textInput.value;
 		}
 		
-    });
+	});
+	
+	/* Fullscreen */
+
+	const fullscreenBtn = document.getElementsByClassName('fullscreen-btn')[0];
+
+	fullscreenBtn.addEventListener('click', (e) => {
+		e.preventDefault();
+		changeStyles('styles.css', 'fullscreen.css');
+		body.classList.add('fullscreen');
+	});
+
+	body.addEventListener('keyup', (e) => {
+		if(e.keyCode == 27 && body.classList.contains('fullscreen')){
+			changeStyles('fullscreen.css', 'styles.css');
+		}
+	});
 
 });
