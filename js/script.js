@@ -39,11 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const startCountdown = () => {
 
 		let seconds = 60;
-		// const beepTime = 4;
-		// const alarmTime = 1;
-		// const systemFailureTime = 0;
-
-		const beepTime = 2;
+		const beepTime = 4;
 		const alarmTime = 1;
 		const systemFailureTime = 0;
 
@@ -153,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const timerMinutes = document.querySelectorAll('#minutes .timer-number');
 	const timerSeconds = document.querySelectorAll('#seconds .timer-number');
 
-	let minutes = 2;
+	let minutes = 108;
 	displayCountdown(timerMinutes, minutes.toString().padStart(3, '0'));
 
 	let countdown, playBeep, playAlarm;
